@@ -8,9 +8,7 @@ from funcoes import (
 )
 
 while True:
-
     print("\n===== SISTEMA DE VENDAS =====")
-
     print("1 - Cadastrar venda")
     print("2 - Mostrar vendas")
     print("3 - Faturamento total")
@@ -21,27 +19,21 @@ while True:
 
     opcao = input("Escolha uma opção: ")
 
-    if opcao == "1":
-        cadastrar_venda()
-
-    elif opcao == "2":
-        mostrar_vendas()
-
-    elif opcao == "3":
-        calcular_faturamento()
-
-    elif opcao == "4":
-        produto_mais_vendido()
-
-    elif opcao == "5":
-        salvar_csv()
-
-    elif opcao == "6":
-        ler_csv()
-
-    elif opcao == "7":
-        print("Sistema encerrado.")
-        break
-
-    else:
-        print("Opção inválida.")
+    match opcao:
+        case "1":
+            cadastrar_venda()
+        case "2":
+            mostrar_vendas()
+        case "3":
+            calcular_faturamento()
+        case "4":
+            produto_mais_vendido()
+        case "5":
+            salvar_csv()
+        case "6":
+            ler_csv()
+        case "7":
+            print("Sistema encerrado.")
+            break
+        case _:  
+            print("Opção inválida.")
